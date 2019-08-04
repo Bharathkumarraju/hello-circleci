@@ -3,7 +3,7 @@ package main
 import ("fmt")
 
 func GetHello() string  {
-	return "Hello Sri Anjaneyam!!!"
+	return "Hello World!"
 }
 
 func main()  {
