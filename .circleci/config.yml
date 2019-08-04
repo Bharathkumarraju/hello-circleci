@@ -19,16 +19,16 @@ jobs:
           paths: ./*  # glob. Will persist everything in a folder
       - store_artifacts:
           path: ./hello-circleci  # executable
-test:
-  docker:
-    - image: circleci/golang:1.11.1
-  working_directory: /go/src/github.com/Static-Void-Academy/circleci-hello
-  steps:
-    - attach_workspace:
-        at: .
-    - checkout  # Checks out the source code
-    - run: go get -d ./...
-    - run: go test
+  test:
+    docker:
+      - image: circleci/golang:1.11.1
+    working_directory: /go/src/github.com/Static-Void-Academy/circleci-hello
+    steps:
+      - attach_workspace:
+          at: .
+      - checkout  # Checks out the source code
+      - run: go get -d ./...
+      - run: go test
 workflows:
   version: 2
   build_test:
