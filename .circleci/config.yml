@@ -8,3 +8,11 @@ jobs:
     steps:
       - checkout # Checks out the source code
       - run: echo "Hello World!"st -v ./...
+      - run: go get -d ./...
+      - run:
+          name: Build the executable
+          command: |
+            echo "Hello this is build step"
+            go build
+      - store_artifacts:
+          path: ./hello-circleci # executable
