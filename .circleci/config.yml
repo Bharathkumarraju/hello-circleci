@@ -15,4 +15,4 @@ jobs:
             echo "Hello this is build step"
             go build
       - store_artifacts:
-          path: ./hellocircleci_bharathartifacts # executable
+          path: ./hello-circleci# executable
