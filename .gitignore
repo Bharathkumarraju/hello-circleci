@@ -1,2 +1,7 @@
 .idea
 .idea/*
+*.test
+*.out
+
+# Executable
+hello-circleci
