@@ -14,6 +14,9 @@ jobs:
           command: |
             echo "Hello this is build step"
             go build
+      - persist_to_workspace:
+          root: . # Persist current working directory
+          paths: ./* # glob. Will persist everything in a folder
       - store_artifacts:
           path: ./hello-circleci# executable
 test:
