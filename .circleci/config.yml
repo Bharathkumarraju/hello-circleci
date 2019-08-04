@@ -6,7 +6,7 @@ jobs:
       - image: circleci/golang:1.11.1
     working_directory: /go/src/github.com/Bharathkumarraju/hello-circleci
     steps:
-      - checkout # Checks out the source code
+      - checkout  # Checks out the source code
       - run: echo "Hello World!"st -v ./...
       - run: go get -d ./...
       - run:
@@ -15,10 +15,10 @@ jobs:
             echo "Hello this is build step"
             go build
       - persist_to_workspace:
-          root: . # Persist current working directory
-          paths: ./* # glob. Will persist everything in a folder
+          root: .  # Persist current working directory
+          paths: ./*  # glob. Will persist everything in a folder
       - store_artifacts:
-          path: ./hello-circleci# executable
+          path: ./hello-circleci  # executable
 test:
   docker:
     - image: circleci/golang:1.11.1
@@ -26,6 +26,6 @@ test:
   steps:
     - attach_workspace:
         at: .
-    - checkout # Checks out the source code
+    - checkout  # Checks out the source code
     - run: go get -d ./...
     - run: go test
